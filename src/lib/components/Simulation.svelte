@@ -11,6 +11,7 @@
 	export let frrEnabled = false;
 
 	const systemLoad = 250;
+	const resolution = 300;
 	const maxTs = 205_000;
 	let frequencyData = [{ ts: 0, frequency: 50 }];
 	let lastFcrValue = 0;
@@ -23,17 +24,19 @@
 	const frequencySimulator = new FrequencySimulator({
 		randomVariations: true,
 		inertia: 12,
-		resolution: 100
+		resolution: resolution
 	});
 	const maxFcrReserve = 0.015;
 	const fcrReserve = new FCRReserve({
 		maxReserve: maxFcrReserve,
-		deadband: 0.01
+		deadband: 0.01,
+		resolution
 	});
 	const maxFrrReserve = 0.02;
 	const frrReserve = new FRRReserve({
 		maxReserve: maxFrrReserve,
-		responseDelay: 133_000
+		responseDelay: 133_000,
+		resolution
 	});
 
 	const interval = setInterval(simulationCallback, 1);
