@@ -22,7 +22,8 @@
 	const secondOutageDelay = 110_000;
 	const frequencySimulator = new FrequencySimulator({
 		randomVariations: true,
-		inertia: 4
+		inertia: 12,
+		resolution: 100
 	});
 	const maxFcrReserve = 0.015;
 	const fcrReserve = new FCRReserve({
@@ -31,10 +32,11 @@
 	});
 	const maxFrrReserve = 0.02;
 	const frrReserve = new FRRReserve({
-		maxReserve: maxFrrReserve
+		maxReserve: maxFrrReserve,
+		responseDelay: 133_000
 	});
 
-	const interval = setInterval(simulationCallback, 0.1);
+	const interval = setInterval(simulationCallback, 1);
 
 	export const stopSimulation = () => clearInterval(interval);
 
