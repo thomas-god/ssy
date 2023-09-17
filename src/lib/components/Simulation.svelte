@@ -94,7 +94,6 @@
 </div>
 
 <Graph data={frequencyData} {maxTs} {outages} />
-<Graph data={frequencyData} {maxTs} {outages} />
 
 <style>
 	h1 {
