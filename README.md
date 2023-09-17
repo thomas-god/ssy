@@ -1,38 +1,15 @@
-# create-svelte
+# SSY - Frequency
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d4c0a05d-c771-4f0b-a323-1996f2e9c28e/deploy-status)](https://app.netlify.com/sites/ssy-frequency/deploys)
 
-## Creating a project
+Simple simulation of the frequency behavior of a grid-scale electrical network. It is built for _teaching purposes_ and thus takes some clear liberty on how some things are simulated versus how they behave in practice.
 
-If you're seeing this, you've probably already done this step. Congrats!
+![Example of a simulation's output](example.png)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+The simulation shows how a grid-scale electrical behaves in case of a power outage (loss of part of its generation capacity) and the various automatic ways used to restore the frequency to its nominal value: __FCR__ (Frequency Containment Reserve) and __FRR__ (Frequency Restoration Reserve).
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+The simulation only shows _automatic_ ways to restore the frequency for simplicity sake. In practice, there are complementary manual ways to restore the frequency: the balancing market and direct manual intervention from TSOs and/or DSOs.
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+For more information the following links can be useful :
+- RTE, Fournir des services système fréquence, https://www.services-rte.com/fr/decouvrez-nos-offres-de-services/fournir-des-services-systeme-frequence.html
+- Gauthier Marc Aimé Delille. Contribution du Stockage à la Gestion Avancée des Systèmes Électriques : approches Organisationnelles et Technico-économiques dans les Réseaux de Distribution. Autre. Ecole Centrale de Lille, 2010. Français. [⟨NNT : 2010ECLI0016⟩](https://www.theses.fr/2010ECLI0016). ⟨tel-00586088⟩
