@@ -24,15 +24,16 @@
 	const frequencySimulator = new FrequencySimulator({
 		randomVariations: true,
 		inertia: 12,
-		resolution: resolution
+		resolution
 	});
 	const maxFcrReserve = 0.015;
 	const fcrReserve = new FCRReserve({
 		maxReserve: maxFcrReserve,
 		deadband: 0.01,
+		responseDelay: 6_000,
 		resolution
 	});
-	const maxFrrReserve = 0.02;
+	const maxFrrReserve = 0.015;
 	const frrReserve = new FRRReserve({
 		maxReserve: maxFrrReserve,
 		responseDelay: 133_000,
